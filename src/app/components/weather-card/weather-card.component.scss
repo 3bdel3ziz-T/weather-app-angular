@@ -1,0 +1,88 @@
+.weather-card {
+  border-radius: 20px;
+  background: url(../../../assets/mountains.jpg);
+  background-position: center;
+  color: white;
+  height: 100%;
+  width: 260px;
+  z-index: 1000;
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  transition: all 300ms ease;
+  transform: scale(1.05) perspective(200px) rotateY(0deg);
+  &.change {
+    animation: changeData 1500ms ease-in-out 0s 1 normal both;
+  }
+  &:hover {
+    transform: scale(1.1) perspective(2500px) rotateY(15deg);
+  }
+  .overlay {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #5c6bc0 10%, #0d47a1 100%);
+    opacity: 0.2;
+  }
+  .content {
+    z-index: 10000;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 20px;
+    .info {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5px;
+    }
+    .today {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      bottom: 20px;
+      left: 20px;
+      i {
+        font-size: 3.6rem;
+        margin-bottom: 10px;
+        }
+      .temp {
+        font-weight: 700;
+        font-size: 3rem;
+        line-height: 40px;
+        .character {
+          font-size: 2.1rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes changeAnimation {
+  0%,
+  100% {
+    transform: scale(1) perspective(200px) rotateY(0deg);
+  }
+  50% {
+    transform: scale(1.1) perspective(2500px) rotateY(15deg);
+  }
+}
+
+@keyframes changeData {
+  0%,
+  100% {
+    width: 260px;
+  }
+  35% {
+    width: 570px;
+  }
+  65% {
+    width: 570px;
+  }
+}

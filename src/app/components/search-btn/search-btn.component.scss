@@ -1,0 +1,58 @@
+button {
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  font-weight: 700;
+  border-radius: 25px;
+  background: #303f9f;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  transition: all 300ms ease;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  &:hover {
+    box-shadow: 0 0 0 transparent;
+  }
+  &.visible {
+    animation: visible 500ms ease-in-out 0s 1 normal both;
+  }
+  &.non-visible {
+    animation: non-visible 500ms ease-in-out 0s 1 normal both;
+  }
+  &:focus {
+    border-color: transparent;
+  }
+}
+
+@keyframes visible {
+  0% {
+    width: 0%;
+    padding: 0;
+    border-width: 0px;
+    opacity: 0.8;
+  }
+  100% {
+    width: 100%;
+    padding: 0.3rem;
+    border-width: 1px;
+    opacity: 1;
+  }
+}
+@keyframes non-visible {
+  0% {
+    width: 100%;
+    padding: 0.3rem;
+    opacity: 1;
+  }
+  100% {
+    width: 0%;
+    padding: 0;
+    border-width: 0px;
+    opacity: 0;
+  }
+}

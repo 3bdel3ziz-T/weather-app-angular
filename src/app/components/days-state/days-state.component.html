@@ -1,0 +1,7 @@
+<div class="days">
+  <div class="day" *ngFor="let day of daysList;let i = index">
+    <i class="{{forecastList[i].weather[0].icon}}"></i>
+    <h4>{{ day }}</h4>
+    <h4>{{(forecastList[i].main.temp).toFixed()}}<span class="character"> °c</span></h4>
+  </div>
+</div>

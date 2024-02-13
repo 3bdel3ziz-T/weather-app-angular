@@ -1,0 +1,15 @@
+<div [ngClass]="{'weather-card': true,'change': changeCity}">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="info">
+      <h2 class="today-name">{{todayDate.week.today}}</h2>
+      <span class="today-date">{{todayDate.monthDay}} {{todayDate.month}} {{todayDate.year}}</span>
+      <span class="spot">{{cityInfo.name}}<span *ngIf="cityInfo.country">, {{cityInfo.country}}</span></span>
+    </div>
+    <div class="today">
+      <i className="{{todayWeather.weather[0].icon}}"></i>
+      <div class="temp">{{todayWeather.main.temp.toFixed()}}<span class="character">°c</span></div>
+      <div class="state">{{todayWeather.weather[0].description}}</div>
+    </div>
+  </div>
+</div>

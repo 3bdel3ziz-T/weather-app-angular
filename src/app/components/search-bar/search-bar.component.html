@@ -1,0 +1,14 @@
+<div class="search">
+  <input
+    type="text"
+    #searchInput
+    placeholder="search your country"
+    [(ngModel)]="cityName"
+    [ngClass]="{
+      search__input: true,
+      visible: isVisible,
+      'non-visible': !isVisible
+    }"
+  />
+  <button class="search__button" (click)="getCityName()"></button>
+</div>
